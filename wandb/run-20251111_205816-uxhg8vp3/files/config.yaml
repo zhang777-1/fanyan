@@ -1,0 +1,162 @@
+_allow_dotted_keys:
+    value: false
+_convert_dict:
+    value: true
+_fields:
+    value:
+        autoencoder: |
+            decoder:
+              dec_depth: 2
+              dec_emb_dim: 256
+              dec_num_heads: 8
+              fourier_freq: 1.0
+              layer_norm_eps: 1.0e-05
+              mlp_ratio: 1
+              num_mlp_layers: 2
+              out_dim: 1
+            encoder:
+              depth: 6
+              emb_dim: 256
+              grid_size: !!python/tuple
+              - 96
+              layer_norm_eps: 1.0e-05
+              mlp_ratio: 1
+              num_heads: 8
+              num_latents: 24
+              patch_size: !!python/tuple
+              - 4
+            model_name: FAE
+        c_dim:
+            - 8
+            - 96
+            - 2
+        coords_dim:
+            - 1
+        dataset: |
+            condition_channels: 2
+            num_samples: 200
+            num_sensors: 96
+            num_workers: 1
+            target_channels: 1
+            test_batch_size: 4
+            train_batch_size: 4
+        diffusion: |
+            condition_dim: 192
+            depth: 6
+            emb_dim: 256
+            grid_size: !!python/tuple
+            - 24
+            mlp_ratio: 1
+            model_name: CondDiT
+            num_heads: 8
+            out_dim: 256
+            use_conditioning: true
+        diffusion_params: |
+            beta_schedule: linear
+            num_steps: 1000
+            prediction_type: epsilon
+        eval: |
+            batch_size: 4
+            num_samples: 50
+            num_steps: 100
+        logging: |
+            log_interval: 10
+        lr: |
+            decay_rate: 0.9
+            init_value: 0.0
+            peak_value: 0.0001
+            transition_steps: 1000
+            warmup_steps: 1000
+        mode: train_diffusion
+        optim: |
+            beta1: 0.9
+            beta2: 0.999
+            clip_norm: 1.0
+            eps: 1.0e-08
+            weight_decay: 1.0e-05
+        saving: |
+            num_keep_ckpts: 1
+            save_interval: 50
+        seed: 42
+        t_dim:
+            - 8
+        training: |
+            max_steps: 1000
+            use_conditioning: true
+        use_conditioning: true
+        wandb: |
+            project: fundiff_geoelectric_1d
+            tag: conditional_diffusion
+        x_dim:
+            - 8
+            - 96
+            - 2
+        z_dim:
+            - 8
+            - 24
+            - 256
+_locked:
+    value: true
+_sort_keys:
+    value: true
+_type_safe:
+    value: true
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            x8nbthynqq0v5xi55j0kxnanlxux5aa9:
+                args:
+                    - --config=configs/diffusion.py:fae,cond_dit
+                codePath: damp_sine\main.py
+                codePathLocal: main.py
+                cpu_count: 16
+                cpu_count_logical: 32
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "484949618688"
+                        used: "53111451648"
+                email: dobby12138@gmail.com
+                executable: D:\condaData\envs_dirs\fundiff\python.exe
+                git:
+                    commit: 3a663722ea8ed9f1da98f67a1af22445f7f488c2
+                    remote: https://github.com/sifanexisted/fundiff.git
+                gpu: NVIDIA GeForce RTX 5060 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Blackwell
+                      cudaCores: 3328
+                      memoryTotal: "8546942976"
+                      name: NVIDIA GeForce RTX 5060 Laptop GPU
+                      uuid: GPU-a9fb2387-71fa-323b-7b08-44712c76689d
+                host: 尊贵的懒羊羊大人
+                memory:
+                    total: "16425459712"
+                os: Windows-10-10.0.26100-SP0
+                program: D:\D\大地电磁一维合成数据\fundiff\damp_sine\main.py
+                python: CPython 3.10.19
+                root: D:\D\大地电磁一维合成数据\fundiff\damp_sine
+                startedAt: "2025-11-11T12:58:16.730331Z"
+                writerId: x8nbthynqq0v5xi55j0kxnanlxux5aa9
+        m: []
+        python_version: 3.10.19
+        t:
+            "1":
+                - 1
+                - 12
+                - 45
+            "2":
+                - 1
+                - 12
+                - 45
+            "3":
+                - 13
+                - 16
+                - 61
+            "4": 3.10.19
+            "5": 0.22.3
+            "8":
+                - 3
+            "12": 0.22.3
+            "13": windows-amd64

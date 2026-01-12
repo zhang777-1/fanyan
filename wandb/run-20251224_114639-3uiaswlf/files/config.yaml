@@ -1,0 +1,182 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            3zzb819ve1vrr9qtr3qim0ks9w386da3:
+                args:
+                    - --config=configs/diffusion.py:fae,dit
+                codePath: damp_sine/main.py
+                codePathLocal: main.py
+                cpu_count: 64
+                cpu_count_logical: 64
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "469814624256"
+                        used: "249457905664"
+                email: 1598935138@qq.com
+                executable: /public/home/hnust15111216958/miniconda3/envs/fundiff2/bin/python
+                git:
+                    commit: 3a663722ea8ed9f1da98f67a1af22445f7f488c2
+                    remote: https://github.com/sifanexisted/fundiff.git
+                gpu: NVIDIA A800-SXM4-80GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A800-SXM4-80GB
+                      uuid: GPU-322d22f6-6c62-8bf5-ecdf-ce7d871ec43a
+                host: dd18093fe00f
+                memory:
+                    total: "540402888704"
+                os: Linux-4.18.0-305.3.1.el8.x86_64-x86_64-with-glibc2.35
+                program: /public/home/hnust15111216958/zyq/fundiff/fundiff/fundiff/damp_sine/main.py
+                python: CPython 3.11.14
+                root: /public/home/hnust15111216958/zyq/fundiff/fundiff/fundiff/damp_sine
+                startedAt: "2025-12-24T11:46:39.446527Z"
+                writerId: 3zzb819ve1vrr9qtr3qim0ks9w386da3
+        m: []
+        python_version: 3.11.14
+        t:
+            "1":
+                - 1
+                - 5
+                - 12
+                - 45
+                - 53
+            "2":
+                - 1
+                - 5
+                - 12
+                - 45
+                - 53
+            "3":
+                - 2
+                - 13
+                - 15
+                - 16
+                - 61
+            "4": 3.11.14
+            "5": 0.23.0
+            "12": 0.23.0
+            "13": linux-x86_64
+autoencoder:
+    value:
+        decoder:
+            dec_depth: 2
+            dec_emb_dim: 256
+            dec_num_heads: 8
+            fourier_freq: 1
+            layer_norm_eps: 1e-05
+            mlp_ratio: 1
+            num_mlp_layers: 2
+            out_dim: 1
+        encoder:
+            depth: 6
+            emb_dim: 256
+            grid_size:
+                - 64
+            layer_norm_eps: 1e-05
+            mlp_ratio: 1
+            num_heads: 8
+            num_latents: 24
+            patch_size:
+                - 8
+        model_name: FAE
+c_dim:
+    value:
+        - 8
+        - 64
+        - 2
+coords_dim:
+    value:
+        - 1
+dataset:
+    value:
+        condition_channels: 2
+        eval_batch_size: 4
+        num_samples: 10000
+        num_sensors: 64
+        num_workers: 1
+        target_channels: 1
+        test_batch_size: 32
+        train_batch_size: 128
+diffusion:
+    value:
+        conditional:
+            condition_dim: 192
+            condition_proj_dim: 256
+            use_conditioning: true
+        depth: 4
+        emb_dim: 256
+        grid_size:
+            - 24
+        mlp_ratio: 2
+        model_name: DiT
+        num_heads: 8
+        out_dim: 256
+diffusion_params:
+    value:
+        beta_schedule: linear
+        num_steps: 2000
+        prediction_type: epsilon
+eval:
+    value:
+        batch_size: 128
+        num_samples: 2000
+        num_steps: 200
+logging:
+    value:
+        eval_interval: 200
+        log_interval: 100
+lr:
+    value:
+        decay_rate: 0.95
+        init_value: 1e-06
+        peak_value: 8e-05
+        transition_steps: 1500
+        warmup_steps: 200
+mode:
+    value: train_diffusion
+optim:
+    value:
+        beta1: 0.9
+        beta2: 0.999
+        clip_norm: 1
+        eps: 1e-08
+        weight_decay: 1e-05
+saving:
+    value:
+        num_keep_ckpts: 3
+        save_interval: 200
+seed:
+    value: 42
+t_dim:
+    value:
+        - 8
+training:
+    value:
+        max_steps: 2000
+        use_conditioning: false
+use_conditioning:
+    value: false
+wandb:
+    value:
+        project: fundiff_geoelectric_1d
+        tag: conditional_diffusion
+x_dim:
+    value:
+        - 8
+        - 64
+        - 2
+y_dim:
+    value:
+        - 8
+        - 50
+        - 1
+z_dim:
+    value:
+        - 8
+        - 24
+        - 256

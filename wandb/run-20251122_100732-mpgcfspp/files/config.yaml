@@ -1,0 +1,163 @@
+_allow_dotted_keys:
+    value: false
+_convert_dict:
+    value: true
+_fields:
+    value:
+        autoencoder: |
+            decoder:
+              dec_depth: 2
+              dec_emb_dim: 256
+              dec_num_heads: 8
+              fourier_freq: 1.0
+              layer_norm_eps: 1.0e-05
+              mlp_ratio: 1
+              num_mlp_layers: 2
+              out_dim: 1
+            encoder:
+              depth: 6
+              emb_dim: 256
+              grid_size: !!python/tuple
+              - 96
+              layer_norm_eps: 1.0e-05
+              mlp_ratio: 1
+              num_heads: 8
+              num_latents: 24
+              patch_size: !!python/tuple
+              - 4
+            model_name: FAE
+        c_dim:
+            - 8
+            - 96
+            - 2
+        coords_dim:
+            - 1
+        dataset: |
+            condition_channels: 2
+            num_samples: 500
+            num_sensors: 96
+            num_workers: 1
+            target_channels: 1
+            test_batch_size: 4
+            train_batch_size: 4
+        diffusion: |
+            conditional:
+              condition_dim: 192
+              condition_proj_dim: 256
+              use_conditioning: true
+            depth: 6
+            emb_dim: 256
+            grid_size: !!python/tuple
+            - 24
+            mlp_ratio: 1
+            model_name: DiT
+            num_heads: 8
+            out_dim: 256
+        diffusion_params: |
+            beta_schedule: linear
+            num_steps: 1000
+            prediction_type: epsilon
+        eval: |
+            batch_size: 4
+            num_samples: 50
+            num_steps: 100
+        logging: |
+            eval_interval: 50
+            log_interval: 100
+        lr: |
+            decay_rate: 0.9
+            init_value: 0.0
+            peak_value: 0.0001
+            transition_steps: 1000
+            warmup_steps: 1000
+        mode: train_diffusion
+        optim: |
+            beta1: 0.9
+            beta2: 0.999
+            clip_norm: 1.0
+            eps: 1.0e-08
+            weight_decay: 1.0e-05
+        saving: |
+            num_keep_ckpts: 1
+            save_interval: 50
+        seed: 42
+        t_dim:
+            - 8
+        training: |
+            max_steps: 1000
+            use_conditioning: true
+        use_conditioning: true
+        wandb: |
+            project: fundiff_geoelectric_1d
+            tag: conditional_diffusion
+        x_dim:
+            - 8
+            - 96
+            - 2
+        z_dim:
+            - 8
+            - 24
+            - 256
+_locked:
+    value: true
+_sort_keys:
+    value: true
+_type_safe:
+    value: true
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            7lwe8t1zdi5lu7hkokg0monkoy8bel14:
+                args:
+                    - --config=configs/diffusion.py:fae,dit
+                codePath: damp_sine/main.py
+                codePathLocal: main.py
+                cpu_count: 64
+                cpu_count_logical: 64
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "472215715840"
+                        used: "141484310528"
+                email: 1736487323@qq.com
+                executable: /public/home/hnust15111216958/miniconda3/envs/fundiff2/bin/python
+                git:
+                    commit: 3a663722ea8ed9f1da98f67a1af22445f7f488c2
+                    remote: https://github.com/sifanexisted/fundiff.git
+                gpu: NVIDIA A800-SXM4-80GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 6912
+                      memoryTotal: "85899345920"
+                      name: NVIDIA A800-SXM4-80GB
+                      uuid: GPU-ad24babc-6300-815f-408c-0bbf224e1dea
+                host: 39152690bb60
+                memory:
+                    total: "540402888704"
+                os: Linux-4.18.0-305.3.1.el8.x86_64-x86_64-with-glibc2.35
+                program: /public/home/hnust15111216958/zyq/fundiff/fundiff/fundiff/damp_sine/main.py
+                python: CPython 3.11.14
+                root: /public/home/hnust15111216958/zyq/fundiff/fundiff/fundiff/damp_sine
+                startedAt: "2025-11-22T10:07:32.134120Z"
+                writerId: 7lwe8t1zdi5lu7hkokg0monkoy8bel14
+        m: []
+        python_version: 3.11.14
+        t:
+            "1":
+                - 1
+                - 12
+                - 45
+            "2":
+                - 1
+                - 12
+                - 45
+            "3":
+                - 13
+                - 16
+                - 61
+            "4": 3.11.14
+            "5": 0.23.0
+            "12": 0.23.0
+            "13": linux-x86_64
